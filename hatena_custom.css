@@ -1,0 +1,557 @@
+﻿/* <!--はてなブログのテーマ(Githateblo)に対して自分で変更した分-->*/
+
+/* <!--テーマを修正した方が良い部分--> */
+
+/*トップページで1記事を短くするために記事単位でカラム表示にする*/
+.page-index .entry-inner {
+  columns: 4 24em;
+  column-gap: 5em;
+  column-rule: 1px dashed #f7f7f7;
+  font-size: 80%;
+}
+
+/*アーカイブをカード表示へ*/
+.archive-entries {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.archive-entry {
+	flex: 0 0 40%;
+}
+
+/*トップ画面のソーシャルパーツを非表示*/
+/*フッターの一部なので禁止事項になるかもしれないので不採用*/
+/*.page-index .social-buttons,
+.page-index .star-navigation-tooltip,
+.page-index .hatena-star-container
+ {
+  display: none;
+}
+*/
+/*関連記事の高さをスリムに*/
+.customized-footer .hatena-module-body .hatena-urllist a {
+  padding: 0px 0px;	/*関連記事の高さと幅をスリムに*/
+}
+.hatena-module {
+    padding: 10px;
+    margin: 2px;
+  }
+
+
+/*カテゴリーのくろを省く*/
+.categories a {
+  padding: 3px 5px 3px 2em;
+  background: #008000;			/*コントラスト対応*/
+}
+.categories a:before {
+  content: "📁" !important;
+}
+
+/*題名のサイズ変更 スマホで大きすぎるので*/
+.entry-title {
+  font-size: 1.8em !important;
+}
+/*↓グローバルメニューをフレックスに*/
+#box2-inner {
+    display: flex;
+    flex-wrap: wrap;	/*フッター表示の場合用にラップに指定*/
+}
+#box2-inner .hatena-module {
+    flex: auto;			/**/
+}
+.hatena-module .hatena-module-title {/*グローバルメニューの見出し*/
+	/*グローバルメニューの時のテーマの位置指定と幅を無効に*/
+    left: auto !important;
+    /*width: auto !important;	*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.hatena-module .hatena-module-body {
+    left: auto !important;
+}
+/*上記のため次の記事のリンクしかない時に回り込んでしまう*/
+.pager {
+    overflow: auto;		/*子要素の高さが親要素に反映しないのを防ぐ*/
+}
+#box2-inner .urllist-title-link {
+	font-size: 100%;	/*フォントがはてな仕様で大きくなるので*/
+}
+
+/*グローバルメニューに画像を入れた時に横に並べる 2022/09*/
+#box2-inner .urllist-item-inner {
+	display:flex;
+	}
+#box2-inner .urllist-item-inner>a {
+	flex: none;
+	}
+#box2-inner .urllist-item-inner>.urllist-title-link {/* 2022/10 */
+	max-width: 13em;
+	flex-shrink: 1;
+	}
+@media (min-width: 960px){
+	.hatena-module-body .hatena-urllist a {
+	    overflow: visible !important;
+	    white-space: normal !important;
+	}
+}
+/*↑グローバルメニューをフレックスに*/
+
+/*↓記事下の関連記事は常に記事下に*/
+#entry-footer-secondary-modules .hatena-module-related-entries .hatena-module-title, 
+#entry-footer-secondary-modules .hatena-module-related-entries .hatena-module-body {
+  position: static;
+  visibility: visible;
+  max-width: none;
+}
+#entry-footer-secondary-modules .hatena-module-related-entries .hatena-module-title:hover,
+#entry-footer-secondary-modules .hatena-module-related-entries .hatena-module-title {
+  border: none;
+  margin: 1em 0;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#entry-footer-secondary-modules .hatena-module-body .hatena-urllist li {
+  position: static;
+}
+#entry-footer-secondary-modules .hatena-module-body .hatena-urllist li a {
+  overflow: visible;	/*画像の横に説明が回り込むように*/
+}
+/*↑記事下の関連記事は常に記事下に*/
+
+
+/*ブログ説明を表示*/
+/*テーマでの非表示を解消。h2の設定を上書き*/
+#blog-description {
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: normal;
+  /*position: relative;*/
+  /*left: 2em;*/			/*ブログ名より少し右へ*/
+  padding: 0em 2em 1.5em;	/*右へずらした分範囲を狭める*/
+}
+#blog-title {
+  height: auto;
+}
+
+/*tableの色と罫線*/
+/*表の色付けは、trでやると行、tdでやると列*/
+/*テーマは、ひょっとするとmarkdownの時だけうまくいかないのかもしれない*/
+table tr:nth-child(odd) {background:#ffffff !important;}	
+
+table tr:nth-child(even) {background:#f8f8f8 !important;}	
+
+th {background: floralwhite !important;}
+
+th,
+td {border-bottom: 1px solid #ddd !important;
+}
+th:first-child, td:first-child {
+	border-left: 1px solid #ddd !important;/*左端に線*/
+}
+
+/*デフォルトフォントサイズを大きくする(テーマは14px)*/
+body {
+  font-size: 16px;
+}
+
+/*↓detailsで自分なりのコメントを入れる*/
+details summary {
+  cursor: pointer;				/*マウスカーソル変更*/
+}
+details {
+  background-color: #f7f7f7;
+  position: relative;
+  left: 2em;					/*インデント*/
+  border: 1px solid #f7f7f7;
+  width: 80%;					/*幅を短く*/
+}
+details summary::after {
+  position: absolute;
+  content: "＋";				/*閉じてる時の表示*/
+  font-weight: bold;
+  right: 0;
+}
+details[open] summary::after {
+  content: "－";				/*開いた時の表示*/
+}
+.entry-content a {				/*コントラスト対応*/
+  color: #3D71B8;
+}
+/*↑detailsで自分なりのコメントを入れる*/
+
+/*大きいイメージにスクロールバーを付けたかったけど縮小された*/
+img {
+  max-width: 100%;
+  overflow: auto;
+}
+
+/*ソースコードの最大の高さ*/
+pre {
+  max-height: 20em;
+}
+
+/*インラインコード(インラインでない(PRE)の場合でも該当するので注意)*/
+code {
+  font-size: inherit;
+  /* overflow: auto; */
+  background-color: #f7f7f7;
+  /* border-radius: 3px; */
+  /* -webkit-print-color-adjust: exact; */
+  margin: initial;
+  padding: initial;
+}
+pre code {
+  border: 0;
+}
+
+/*見出しに背景を付ける*/
+#content h2 {
+  /*background: linear-gradient(transparent, #fef4f4);*/
+  background: #fef4f4; 
+  padding: 1%;
+  border-bottom: 1px solid #ff9999; /*アンダーラインの太さとカラー*/
+  border-top: 1px solid #ff9999; /*アンダーラインの太さとカラー*/
+  line-height: 1.0; /*高さ*/
+}
+#content h3 {
+  background: linear-gradient(transparent 50%, #ccc4c4);
+
+  padding: 1%;
+  line-height: 1.0; /*高さ*/
+}
+#content h4 {
+  background: linear-gradient(transparent 80%, #fef4f4);
+}
+#content h5 {
+  border-left: solid 10px #e6cde3;/*左線 淡紅藤*/
+}
+#content h6 {
+  color: #333;
+}
+
+/*下線 ボールド マーカー風*/
+u, strong {
+   /*background: linear-gradient(transparent 50%, #a8eaff 50%);*/
+   background: linear-gradient(transparent 50%, #ccffcc 50%);
+   border-bottom: none;
+} 
+
+/*イタリック マーカー風*/
+em {
+   font-style:	italic;
+   /*background: linear-gradient(transparent 70%, #ffffa8 0%);*/
+   background: linear-gradient(transparent 70%, #ffdc00 0%);
+   border-bottom: none;
+}
+
+/*引用デザイン--ここから↓↓--*/
+blockquote {
+  position: relative;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  /*color: inherit !important;*/	/*引用の色を濃くする 22/09*/
+}
+
+blockquote:after{
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 7px 0 0;
+  text-align: center;
+  content: "出典に感謝!!";
+  font-family: meiryo;
+  background: #ddd;
+  color: #888888;
+  font-size: 10px;
+}
+
+blockquote p {
+  position: relative;
+  padding: 0;
+  margin: 10px 0;
+  z-index: 3;
+  line-height: 1.7;
+  /*color: gray;*//*削除2022/09*/
+}
+.entry-content blockquote {
+  color: gray;
+}
+
+/*citeタグを右寄せに*/
+/* blockquote cite { */
+cite {
+  display: block;
+  text-align: right;
+  color: #888888;
+  font-size: 0.9em;
+  right: 4em;
+  position: relative;
+}
+/*↓投稿日、更新日*/
+.dt-write {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em;
+    right: 4em;
+    position: relative;
+    font-style: italic;
+}
+/*↑投稿日、更新日*/
+
+/*カテゴリをフレックスにして横にも並ぶようにする*/
+.hatena-module-category .hatena-urllist {
+  display: flex;
+  flex-wrap: wrap;
+ border: 1px solid #eee;
+}
+.hatena-module-category .hatena-urllist li {
+  border-left: 1px solid #eee;
+  flex: auto;
+}
+
+/*948pxでグローバルメニューが出るようにする対応*/
+/*
+@media all and (min-width: 948px) {
+  #box2-inner {
+    display: flex;
+    justify-content: center;
+  }
+  #box2-inner .hatena-module {
+    flex: 0 0 10em;
+  }
+  
+  #box2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%
+  }
+  .hatena-module:not(.hatena-module-search-box) .hatena-module-body {
+    position: absolute;
+    top: -22px;
+    background: #fff;
+    border: 1px solid #eee;
+    visibility: hidden;
+    min-width: 150px;
+    min-height: 34px;
+    box-shadow: 0 2px 4px -1px hsla(0, 0%, 0%, .5);
+  }
+   .hatena-module:not(.hatena-module-search-box) .hatena-module-body {
+    top: -53px;
+  }
+  .hatena-module:not(.hatena-module-search-box) .hatena-module-body:hover {
+    visibility: visible;
+  }
+  .hatena-module:not(.hatena-module-search-box) .hatena-module-title:hover + .hatena-module-body {
+    visibility: visible;
+  }
+
+}
+*/
+/*カテゴリをフレックスにして横にも並ぶようにする ここまで*/
+
+/* <!--テーマに関わらず追加した部分--> */
+
+/*段組み(カラム)*/
+.columns {
+  columns: 4 24em;
+  column-rule: 1px solid darkgray/*#f7f7f7*/;
+}
+
+/*目次を深さ2までにする*/
+/*table-of-contentsが1階層目で以下のulが次の階層、3階層目から非表示*/
+.table-of-contents ul ul {
+  display: none; 
+}
+
+/*↓カード型*/
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+}
+.card {
+	display: flex;
+	border: 1px solid #ddd;
+	flex-direction: column;
+	flex-basis: 200px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	padding: 0 7px;
+}
+.card4 {
+	display: flex;
+	border: 1px solid #ddd;
+	flex-direction: column;
+	flex-basis: 400px;
+	margin-right: 0px;
+	margin-bottom: 15px;
+	padding: 0 7px;
+}
+/*↑カード型*/
+/*↓タイトル付きボックス*/
+/*シンプル角丸（影）枠 2*/
+.box-frame {
+  position: relative;
+  margin: 2em auto;
+  padding: 1em 1em 0.5em;
+  color: #666666; /*文字色*/
+  border: 4px solid #f6bfbc; /*線の太さ・色*/
+  background-color: #fff; /*背景色*/
+  border-radius: 3em .8em 3em .7em/.9em 2em .8em 3em;
+}
+.box-title {
+ position: absolute;
+ padding: 0 .5em;
+ left: 20px;
+ top: -10px;
+ font-weight: bold;
+ background-color: #fff; /* タイトル背景色 */
+ color: #996633; /* タイトル文字色 */
+}
+/*↑タイトル付きボックス*/
+
+/*↓スマホ風ボックス*/
+.box12::before {
+	position: absolute;
+	content: "スマホ風";
+	text-align: right;
+	top: -3ex;
+	left: 10em;
+	color: #FFF;
+}
+.box12 {
+	position: relative;
+    padding: 0 1em;
+    margin: 0 1em;
+    color: #6091d3;/*文字色*/
+    width: 12em;
+    background: #FFF;
+    border: solid 3ex #6091d3;/*線*/
+    border-radius: 15px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}
+/*↑スマホ風ボックステスト*/
+/*↓アイキャッチ用*/
+/*フロートの解除は別途にすればこれだけでいける*/
+img[src*="#ai"] {
+  width: 120px;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+/*↑アイキャッチ用*/
+
+/*↓画像の配置*/
+/*「![](url#center)」と指定して使う*/
+/*画像の中央寄せ*/
+img[src*="#center"] {
+  display: block;
+  margin: auto;
+}
+/*画像の右寄せ、文字の回り込み*/
+img[src*="#right"] {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+/*画像の左寄せ、文字の回り込み*/
+img[src*="#left"] {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+/*↑画像の配置*/
+
+.osusume {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.osusume a {
+	flex: 0 0 24%;	/*幅が狭すぎるので対策が必要*/
+	border: solid 1px lightgray;
+	text-align: center;
+}
+.osusume img {
+  max-height: 120px;
+}
+.osusume img:hover {
+  filter: drop-shadow(5px 5px 10px #666);
+}
+.osusumeitem {
+	flex: 0 0 24%;	/*幅が狭すぎるので対策が必要*/
+	border: solid 1px lightgray;
+	text-align: center;
+}
+.osusumeitem a{
+	border: none;
+}
+/*↓箇条書きの横並び*/
+/*まだ、思ったような結果ではない*/
+/*幅を狭めると文字が重なる(スマホだとだめかも)*/
+.flex > ul {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 1em;
+}
+.flex > ul > li {
+	flex: 0 0 12em;
+	list-style-position: inside;/*接頭記号を文字として扱う*/
+}
+/*↑箇条書きの横並び*/
+/*↓脚注の番号が見にくいので太字にする はてなとローカル用*/
+a[rel="footnote"] {
+	font-weight: bold;
+}
+a[rel="footnote"]:before {
+	font-weight: bold;
+	content:"*";
+}
+/*↑脚注の番号が見にくいので太字にする はてなとローカル用*/
+
+/*↓表の横スクロール*/
+.entry-content table {
+	display: block;
+	overflow-x: auto;
+	border: none !important;
+}
+/*↑表の横スクロール*/
+/*↓カルーセル(スライダー)*/
+/*flexを使う*/
+.slider {
+  max-width: 800px;
+  width      : 100%;
+  height     : 100%;
+  display:	flex;
+  overflow-x:	auto;
+  scroll-snap-type: x proximity;
+  }
+.slider > img {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  }
+}/*↑カルーセル(スライダー)*/
+
+/*↓箇条書きの横並び*/
+@media (max-width: 599px){
+	.flex > ul > li {
+		flex: 0 0 7em;
+	}
+}
+/*↑箇条書きの横並び*/
+
+/*↓画像の遅延読み込み*/
+.hatenablog-entry :not(.slider) img {
+  content-visibility: auto;
+  contain-intrinsic-size: 400px;
+}
+/*↑画像の遅延読み込み*/
