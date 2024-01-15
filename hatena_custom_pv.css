@@ -257,7 +257,7 @@ blockquote {
   border-top: 1px solid #96ddc1;
   border-right: 1px solid #96ddc1;
   border-bottom: 1px solid #96ddc1;
-  /*color: inherit !important;*/	/*引用の色を濃くする 22/09*/
+  padding-bottom: .3em;
 }
 /*引用枠に見出しを追加は削除*/
 
@@ -285,6 +285,10 @@ cite {
   right: 4em;
   position: relative;
 }
+blockquote cite::before {
+	content: "引用(Quote)：";
+}
+
 /*↓投稿日、更新日*/
 .dt-write {
     display: block;
