@@ -251,13 +251,14 @@ em {
 
 /*引用デザイン--ここから↓↓--*/
 /*引用の罫線色*/
-blockquote {
+.entry-content blockquote {
   position: relative;
   border-left: 3px solid #96ddc1;
   border-top: 1px solid #96ddc1;
   border-right: 1px solid #96ddc1;
   border-bottom: 1px solid #96ddc1;
   padding-bottom: .3em;
+  color: gray;
 }
 /*引用枠に見出しを追加は削除*/
 
@@ -270,9 +271,6 @@ blockquote p {
   z-index: 3;
   line-height: 1.7;
   /*color: gray;*//*削除2022/09*/
-}
-.entry-content blockquote {
-  color: gray;
 }
 
 /*citeタグを右寄せに*/
