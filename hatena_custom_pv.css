@@ -250,30 +250,19 @@ em {
 }
 
 /*引用デザイン--ここから↓↓--*/
+/*引用の罫線色*/
 blockquote {
   position: relative;
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-left: 3px solid #96ddc1;
+  border-top: 1px solid #96ddc1;
+  border-right: 1px solid #96ddc1;
+  border-bottom: 1px solid #96ddc1;
   /*color: inherit !important;*/	/*引用の色を濃くする 22/09*/
 }
+/*引用枠に見出しを追加は削除*/
 
-blockquote:after{
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 20px;
-  line-height: 20px;
-  border-radius: 7px 0 0;
-  text-align: center;
-  content: "出典に感謝!!";
-  font-family: meiryo;
-  background: #ddd;
-  color: #888888;
-  font-size: 10px;
-}
 
+/*引用の文字位置と色*/
 blockquote p {
   position: relative;
   padding: 0;
