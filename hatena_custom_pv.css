@@ -590,7 +590,7 @@ a[rel="footnote"]:before {
   flex-shrink: 0;
   scroll-snap-align: start;
   }
-}/*↑カルーセル(スライダー)*/
+/*↑カルーセル(スライダー)*/
 
 /*↓箇条書きの横並び*/
 @media (max-width: 599px){
