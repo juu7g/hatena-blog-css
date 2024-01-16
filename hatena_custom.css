@@ -249,30 +249,20 @@ em {
 }
 
 /*引用デザイン--ここから↓↓--*/
-blockquote {
+/*引用の罫線色*/
+.entry-content blockquote {
   position: relative;
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  /*color: inherit !important;*/	/*引用の色を濃くする 22/09*/
+  border-left: 3px solid #96ddc1;
+  border-top: 1px solid #96ddc1;
+  border-right: 1px solid #96ddc1;
+  border-bottom: 1px solid #96ddc1;
+  padding-bottom: .3em;
+  color: gray;
 }
+/*引用枠に見出しを追加は削除*/
 
-blockquote:after{
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 20px;
-  line-height: 20px;
-  border-radius: 7px 0 0;
-  text-align: center;
-  content: "出典に感謝!!";
-  font-family: meiryo;
-  background: #ddd;
-  color: #888888;
-  font-size: 10px;
-}
 
+/*引用の文字位置と色*/
 blockquote p {
   position: relative;
   padding: 0;
@@ -280,9 +270,6 @@ blockquote p {
   z-index: 3;
   line-height: 1.7;
   /*color: gray;*//*削除2022/09*/
-}
-.entry-content blockquote {
-  color: gray;
 }
 
 /*citeタグを右寄せに*/
@@ -295,6 +282,10 @@ cite {
   right: 4em;
   position: relative;
 }
+blockquote cite::before {
+	content: "引用(Quote)：";
+}
+
 /*↓投稿日、更新日*/
 .dt-write {
     display: block;
@@ -539,7 +530,7 @@ a[rel="footnote"]:before {
   flex-shrink: 0;
   scroll-snap-align: start;
   }
-}/*↑カルーセル(スライダー)*/
+/*↑カルーセル(スライダー)*/
 
 /*↓箇条書きの横並び*/
 @media (max-width: 599px){
