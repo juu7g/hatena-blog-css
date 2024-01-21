@@ -87,7 +87,7 @@
 #box2-inner .urllist-item-inner>a {
 	flex: none;
 	}
-#box2-inner .urllist-item-inner>.urllist-title-link {
+#box2-inner .urllist-item-inner>.urllist-title-link {/* 2022/10 */
 	max-width: 13em;
 	flex-shrink: 1;
 	}
@@ -546,7 +546,7 @@ img[src*="#left"] {
 	flex: 0 0 12em;
 	list-style-position: inside;/*接頭記号を文字として扱う*/
 }
-
+/*↑箇条書きの横並び*/
 .page-archive .entry-title {
     font-size: 1.3rem;
     margin: .4rem .7rem;
