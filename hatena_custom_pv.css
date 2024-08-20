@@ -474,6 +474,7 @@ blockquote cite::before {
 /*フロートの解除は別途にすればこれだけでいける*/
 img[src*="#ai"] {
   width: 120px;
+  height: auto;
   float: left;
   margin: 0 1em 1em 0;
 }
