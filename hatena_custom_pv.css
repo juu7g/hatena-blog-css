@@ -2,6 +2,11 @@
 
 /* <!--テーマを修正した方が良い部分--> */
 
+/*トップページを固定ページにした場合、２記事出るので2つ目以降を非表示にする*/
+.page-index article + article {
+	display: none;
+}
+
 /*トップページで1記事を短くするために記事単位でカラム表示にする*/
 /*Homeをトップページの固定した場合に止める*/
 /*
@@ -474,7 +479,6 @@ blockquote cite::before {
 /*フロートの解除は別途にすればこれだけでいける*/
 img[src*="#ai"] {
   width: 120px;
-  height: auto;
   float: left;
   margin: 0 1em 1em 0;
 }
