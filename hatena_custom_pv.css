@@ -53,6 +53,7 @@
 .categories a {
   padding: 3px 5px 3px 2em;
   background: #008000;			/*コントラスト対応*/
+  color: #f8f8f8 !important;
 }
 .categories a:before {
   content: "📁" !important;
