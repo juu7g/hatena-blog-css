@@ -3,13 +3,15 @@
 /* <!--テーマを修正した方が良い部分--> */
 
 /*トップページで1記事を短くするために記事単位でカラム表示にする*/
+/*Homeをトップページの固定した場合に止める*/
+/*
 .page-index .entry-inner {
   columns: 4 24em;
   column-gap: 5em;
   column-rule: 1px dashed #f7f7f7;
   font-size: 80%;
 }
-
+*/
 /*アーカイブをカード表示へ*/
 .archive-entries {
 	display: flex;
@@ -43,6 +45,7 @@
 .categories a {
   padding: 3px 5px 3px 2em;
   background: #008000;			/*コントラスト対応*/
+  color: #f8f8f8 !important;
 }
 .categories a:before {
   content: "📁" !important;
@@ -439,9 +442,17 @@ blockquote cite::before {
 img[src*="#ai"] {
   width: 120px;
   float: left;
-  margin: 0 1em 1em 0;
+  margin: 0 1em 1em 0;	/* 右と下*/
 }
 /*↑アイキャッチ用*/
+/*↓右アイキャッチ用*/
+/*フロートの解除は別途にすればこれだけでいける*/
+img[src*="#air"] {
+  width: 120px;
+  float: right;
+  margin: 0 0 1em 1em;		/* 左と下*/
+}
+/*↑右アイキャッチ用*/
 
 /*↓画像の配置*/
 /*「![](url#center)」と指定して使う*/
