@@ -2,6 +2,12 @@
 
 /* <!--テーマを修正した方が良い部分--> */
 
+/* ヘッダのスケルトンスクリーンを非表示 simadzuさん指摘*/
+#globalheader-container:before,
+#globalheader-container:after {
+    content: none !important;
+}
+
 /*トップページで1記事を短くするために記事単位でカラム表示にする*/
 /*Homeをトップページの固定した場合に止める*/
 /*
@@ -43,7 +49,7 @@
 
 /*カテゴリーのくろを省く*/
 .categories a {
-  padding: 3px 5px 3px 2em;
+  padding: 3px 5px 3px 2.5em;	/*カテゴリ名を右に2em⇒2.5em*/
   background: #008000;			/*コントラスト対応*/
   color: #f8f8f8 !important;
 }
@@ -439,7 +445,7 @@ blockquote cite::before {
 /*↑スマホ風ボックステスト*/
 /*↓アイキャッチ用*/
 /*フロートの解除は別途にすればこれだけでいける*/
-img[src*="#ai"] {
+img[src$="#ai"] {
   width: 120px;
   float: left;
   margin: 0 1em 1em 0;	/* 右と下*/
@@ -447,7 +453,7 @@ img[src*="#ai"] {
 /*↑アイキャッチ用*/
 /*↓右アイキャッチ用*/
 /*フロートの解除は別途にすればこれだけでいける*/
-img[src*="#air"] {
+img[src$="#air"] {
   width: 120px;
   float: right;
   margin: 0 0 1em 1em;		/* 左と下*/
