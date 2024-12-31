@@ -57,7 +57,7 @@
 
 /*カテゴリーのくろを省く*/
 .categories a {
-  padding: 3px 5px 3px 2em;
+  padding: 3px 5px 3px 2.5em;	/*カテゴリ名を右に2em⇒2.5em*/
   background: #008000;			/*コントラスト対応*/
   color: #f8f8f8 !important;
 }
