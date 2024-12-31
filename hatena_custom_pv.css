@@ -10,6 +10,12 @@
 }
 */
 
+/* ヘッダのスケルトンスクリーンを非表示 simadzuさん指摘*/
+#globalheader-container:before,
+#globalheader-container:after {
+    content: none !important;
+}
+
 /*トップページで1記事を短くするために記事単位でカラム表示にする*/
 /*Homeをトップページの固定した場合に止める*/
 /*
@@ -481,18 +487,18 @@ blockquote cite::before {
 /*↑スマホ風ボックステスト*/
 /*↓アイキャッチ用*/
 /*フロートの解除は別途にすればこれだけでいける*/
-img[src*="#ai"] {
+img[src$="#ai"] {
   width: 120px;
   float: left;
-  margin: 0 1em 1em 0;
+  margin: 0 1em 1em 0;	/* 右と下*/
 }
 /*↑アイキャッチ用*/
 /*↓右アイキャッチ用*/
 /*フロートの解除は別途にすればこれだけでいける*/
-img[src*="#air"] {
+img[src$="#air"] {
   width: 120px;
   float: right;
-  margin: 0 1em 1em 0;
+  margin: 0 0 1em 1em;		/* 左と下*/
 }
 /*↑右アイキャッチ用*/
 
