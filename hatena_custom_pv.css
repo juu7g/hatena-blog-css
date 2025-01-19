@@ -627,6 +627,6 @@ a[rel="footnote"]:before {
 /*↓画像の遅延読み込み*/
 .hatenablog-entry :not(.slider) img {
   content-visibility: auto;
-  contain-intrinsic-size: 400px;
+  contain-intrinsic-size: auto 400px;
 }
 /*↑画像の遅延読み込み*/
