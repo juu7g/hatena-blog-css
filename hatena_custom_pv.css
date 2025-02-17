@@ -625,6 +625,7 @@ a[rel="footnote"]:before {
 /*↑箇条書きの横並び*/
 
 /*↓画像の遅延読み込み*/
+:not(_:lang(x)::-moz-placeholder),  /*Firefox以外で有効にする*/
 .hatenablog-entry :not(.slider) img {
   content-visibility: auto;
   contain-intrinsic-size: auto 400px;
