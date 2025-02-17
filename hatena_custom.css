@@ -557,7 +557,8 @@ a[rel="footnote"]:before {
 }
 /*↑箇条書きの横並び*/
 
-/*↓画像の遅延読み込み*/
+/*↓画像の遅延読み込み*/ /*Chromeだけで有効にする*/
+_:lang(x)::-internal-media-controls-overlay-cast-button, 
 .hatenablog-entry :not(.slider) img {
   content-visibility: auto;
   contain-intrinsic-size: 400px;
