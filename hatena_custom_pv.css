@@ -624,10 +624,10 @@ a[rel="footnote"]:before {
 }
 /*↑箇条書きの横並び*/
 
-/*↓画像の遅延読み込み*/ /*Firefox以外で有効にする*/
+/*↓画像の遅延読み込み*/ /*Chromeだけで有効にする*/
 _:lang(x)::-internal-media-controls-overlay-cast-button, 
 .hatenablog-entry :not(.slider) img {
   content-visibility: auto;
-  contain-intrinsic-size: auto 400px;
+  contain-intrinsic-size: 400px;
 }
 /*↑画像の遅延読み込み*/
