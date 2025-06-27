@@ -560,13 +560,13 @@ img[src*="#left"] {
 /*↓箇条書きの横並び*/
 /*まだ、思ったような結果ではない*/
 /*幅を狭めると文字が重なる(スマホだとだめかも)*/
-.flex > ul, ol {
+.flex > ul {
 	display: flex;
 	flex-wrap: wrap;
 	padding-left: 1em;
 	column-gap: 1ch;
 }
-.flex > ul, ol > li {
+.flex > ul > li {
 	flex: 0 0 12em;
 	list-style-position: inside;/*接頭記号を文字として扱う*/
 }
